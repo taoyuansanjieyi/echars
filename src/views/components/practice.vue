@@ -1,12 +1,10 @@
 <template>
-  <div
-    :id="id"
-    :style="style"></div>
+  <div :id="id" :style="style"></div>
 </template>
 
 <script>
   export default {
-    name: 'Echarts',
+    name: 'Practice',
     props: {
       // 父组件需要传递的参数：id，width，height，options
       id: {
@@ -31,7 +29,7 @@
     data () {
       return {
         // 实例
-        chart: ''
+        charts: ''
       }
     },
     computed: {
@@ -47,11 +45,11 @@
       // 监控echarts属性变化
       options: {
         handler (newVal, oldVal) {
-          if (this.chart) {
+          if (this.charts) {
             if (newVal) {
-              this.chart.setOption(newVal)
+              this.charts.setOption(newVal)
             } else {
-              this.chart.setOption(oldVal)
+              this.charts.setOption(oldVal)
             }
           } else {
             this.init()
@@ -66,15 +64,15 @@
     },
     destroyed () {
       // 销毁
-      this.chart.dispose()
+      this.charts.dispose()
     },
     methods: {
       // 初始化
       init () {
-        this.chart = this.$echarts.init(document.getElementById(this.id))
-        this.chart.setOption(this.options)
+        this.charts = this.$echarts.init(document.getElementById(this.id))
+        this.charts.setOption(this.options)
         // 重绘
-        window.addEventListener('resize', this.chart.resize)
+        window.addEventListener('resize', this.charts.resize)
       }
     }
   }

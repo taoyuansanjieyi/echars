@@ -1,12 +1,10 @@
 <template>
-  <div
-    :id="id"
-    :style="style"></div>
+  <div :id="id" :style="style"></div>
 </template>
 
 <script>
   export default {
-    name: 'Echarts',
+    name: 'PieChart',
     props: {
       // 父组件需要传递的参数：id，width，height，options
       id: {
@@ -31,7 +29,7 @@
     data () {
       return {
         // 实例
-        chart: ''
+        pie: ''
       }
     },
     computed: {
@@ -47,17 +45,18 @@
       // 监控echarts属性变化
       options: {
         handler (newVal, oldVal) {
-          if (this.chart) {
+          if (this.pie) {
             if (newVal) {
-              this.chart.setOption(newVal)
+              this.pie.setOption(newVal)
             } else {
-              this.chart.setOption(oldVal)
+              this.pie.setOption(oldVal)
             }
           } else {
             this.init()
           }
         },
         deep: true
+
       }
     },
     mounted () {
@@ -66,15 +65,15 @@
     },
     destroyed () {
       // 销毁
-      this.chart.dispose()
+      this.pie.dispose()
     },
     methods: {
       // 初始化
       init () {
-        this.chart = this.$echarts.init(document.getElementById(this.id))
-        this.chart.setOption(this.options)
+        this.pie = this.$echarts.init(document.getElementById(this.id))
+        this.pie.setOption(this.options)
         // 重绘
-        window.addEventListener('resize', this.chart.resize)
+        window.addEventListener('resize', this.pie.resize)
       }
     }
   }
