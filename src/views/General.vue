@@ -8,17 +8,30 @@
       <span>用户</span>
       <span>流量</span>
     </div>
-    <div class="Gcenter">数据更新时间：2020.01.01  00:00:00</div>
+    <div class="Gcenter">
+      数据更新时间：2020.01.01  00:00:00
+    </div>
     <div class="Gbottom">
       <div class="Gls">
-        <div v-for="(item,index) in list" :key="index">
-          <div class="Gtit">{{item.title}}</div>
-          <div class="num">{{item.num}}</div>
-          <div class="num1">{{item.num1}}</div>
-      </div>
+        <div
+          v-for="(item,index) in list"
+          :key="index">
+          <div class="Gtit">
+            {{ item.title }}
+          </div>
+          <div class="num">
+            {{ item.num }}
+          </div>
+          <div class="num1">
+            {{ item.num1 }}
+          </div>
+        </div>
       </div>
       <Practices></Practices>
       <PieCharts></PieCharts>
+      <Histograms></Histograms>
+      <Columnars></Columnars>
+      <Lines></Lines>
     </div>
   </div>
 </template>
@@ -26,12 +39,18 @@
 <script>
   import Practices from './components/practices'
   import PieCharts from './components/PieCharts'
+  import Histograms from './components/Histograms'
+  import Columnars from './components/Columnars'
+  import Lines from './components/Lines'
 
   export default {
     name: 'General',
     components: {
       Practices,
-      PieCharts
+      PieCharts,
+      Histograms,
+      Columnars,
+      Lines
     },
     data () {
       return {

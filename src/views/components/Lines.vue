@@ -1,0 +1,66 @@
+<template>
+  <div class="lines">
+    <Lin
+      :id="line"
+      :options="options"></Lin>
+  </div>
+</template>
+
+<script>
+  import Lin from './Lin'
+
+  export default {
+    name: 'Lines',
+    components: {
+      Lin
+    },
+    props: {},
+    data () {
+      return {
+        line: 'lins',
+        options: {
+          title: {
+            text: '近1年用户活跃度趋势',
+            textStyle: {
+              fontWeight: 'normal'
+            }
+          },
+          left: 'left',
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line',
+            areaStyle: {
+              normal: {
+                color: '#FFDFA9'
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: '#FFDFA9',
+                lineStyle: {
+                  color: '#FFDFA9'
+                }
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .lines{
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+  }
+</style>

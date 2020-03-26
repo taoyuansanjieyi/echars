@@ -1,3 +1,4 @@
+<!-- 饼图 https://www.echartsjs.com/examples/zh/editor.html?c=pie-simple -->
 <template>
   <div :id="id" :style="style"></div>
 </template>

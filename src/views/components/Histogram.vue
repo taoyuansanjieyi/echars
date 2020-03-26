@@ -1,13 +1,11 @@
-<!-- 环状饼图 http://www.echartsjs.com/examples/zh/editor.html?c=pie-roseType -->
+<!-- 横向柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dataset-encode0&theme=light -->
 <template>
-  <div
-    :id="id"
-    :style="style"></div>
+  <div :id="id" :style="style"></div>
 </template>
 
 <script>
   export default {
-    name: 'Practice',
+    name: 'Histogram',
     props: {
       // 父组件需要传递的参数：id，width，height，options
       id: {
@@ -32,7 +30,7 @@
     data () {
       return {
         // 实例
-        charts: ''
+        histogram: ''
       }
     },
     computed: {
@@ -48,11 +46,11 @@
       // 监控echarts属性变化
       options: {
         handler (newVal, oldVal) {
-          if (this.charts) {
+          if (this.histogram) {
             if (newVal) {
-              this.charts.setOption(newVal)
+              this.histogram.setOption(newVal)
             } else {
-              this.charts.setOption(oldVal)
+              this.histogram.setOption(oldVal)
             }
           } else {
             this.init()
@@ -67,15 +65,15 @@
     },
     destroyed () {
       // 销毁
-      this.charts.dispose()
+      this.histogram.dispose()
     },
     methods: {
       // 初始化
       init () {
-        this.charts = this.$echarts.init(document.getElementById(this.id))
-        this.charts.setOption(this.options)
+        this.histogram = this.$echarts.init(document.getElementById(this.id))
+        this.histogram.setOption(this.options)
         // 重绘
-        window.addEventListener('resize', this.charts.resize)
+        window.addEventListener('resize', this.histogram.resize)
       }
     }
   }

@@ -21,8 +21,9 @@
         options: {
           title: {
             text: '某站点用户访问来源',
-            subtext: '纯属虚构',
-            left: 'center'
+            textStyle: {
+              fontWeight: 'normal'
+            }
           },
           tooltip: {
             trigger: 'item',
@@ -70,6 +71,6 @@
   .pies{
     width: 350px;
     height: 300px;
-    border:1px solid #ccc;
+    background-color: #fff;
   }
 </style>

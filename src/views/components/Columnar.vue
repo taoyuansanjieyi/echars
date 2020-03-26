@@ -1,13 +1,11 @@
-<!-- 环状饼图 http://www.echartsjs.com/examples/zh/editor.html?c=pie-roseType -->
+<!-- 纵向柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dataset-simple1 -->
 <template>
-  <div
-    :id="id"
-    :style="style"></div>
+  <div :id="id" :style="style"></div>
 </template>
 
 <script>
   export default {
-    name: 'Practice',
+    name: 'Columnar',
     props: {
       // 父组件需要传递的参数：id，width，height，options
       id: {
@@ -32,7 +30,7 @@
     data () {
       return {
         // 实例
-        charts: ''
+        columnar: ''
       }
     },
     computed: {
@@ -48,11 +46,11 @@
       // 监控echarts属性变化
       options: {
         handler (newVal, oldVal) {
-          if (this.charts) {
+          if (this.columnar) {
             if (newVal) {
-              this.charts.setOption(newVal)
+              this.columnar.setOption(newVal)
             } else {
-              this.charts.setOption(oldVal)
+              this.columnar.setOption(oldVal)
             }
           } else {
             this.init()
@@ -67,15 +65,15 @@
     },
     destroyed () {
       // 销毁
-      this.charts.dispose()
+      this.columnar.dispose()
     },
     methods: {
       // 初始化
       init () {
-        this.charts = this.$echarts.init(document.getElementById(this.id))
-        this.charts.setOption(this.options)
+        this.columnar = this.$echarts.init(document.getElementById(this.id))
+        this.columnar.setOption(this.options)
         // 重绘
-        window.addEventListener('resize', this.charts.resize)
+        window.addEventListener('resize', this.columnar.resize)
       }
     }
   }
