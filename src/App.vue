@@ -27,6 +27,10 @@
   color: #2c3e50;
 }
 
+#container {
+  height:100%
+}
+
 #nav {
   padding: 30px;
 

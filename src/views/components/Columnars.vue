@@ -25,6 +25,15 @@
               fontWeight: 'normal'
             }
           },
+          grid: {
+            // 调整图表距离父元素的距离
+            left: '8%',
+            top: '25%',
+            right: '20%',
+            width: '80%', // 图表的大小
+            height: '50%',
+            containLabel: true
+          },
           dataset: {
             // dimensions: ['2015', '2016', '2017'],
             source: [
@@ -66,8 +75,8 @@
 
 <style scoped>
   .columnars{
-    width: 350px;
-    height: 300px;
+    width: 49.5%;
+    height: 240px;
     background-color: #fff;
   }
 </style>

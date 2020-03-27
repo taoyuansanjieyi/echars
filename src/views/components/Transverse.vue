@@ -1,7 +1,8 @@
+<!-- 横向柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dataset-encode0&theme=light -->
 <template>
-  <div class="histograms">
+  <div class="transverse">
     <Histogram
-      :id="histograms"
+      :id="transverse"
       :options="options"></Histogram>
   </div>
 </template>
@@ -17,10 +18,10 @@
     props: {},
     data () {
       return {
-        histograms: 'his',
+        transverse: 'tran',
         options: {
           title: {
-            text: '累计用户数',
+            text: '2020年1月各版本用户活跃度',
             textStyle: {
               fontWeight: 'normal'
             }
@@ -28,26 +29,20 @@
           dataset: {
             source: [
               ['score', 'amount', 'product'],
-              [89.3, 58212, '18款博越'],
-              [57.1, 78254, '帝豪GL'],
-              [74.4, 41032, '帝豪GS'],
-              [50.1, 12755, '领克01'],
-              [89.7, 20145, '领克03'],
-              [68.1, 79146, '全新帝豪'],
-              [19.6, 91852, '领克02'],
-              [10.6, 101852, '缤越'],
-              [32.7, 20112, 'ICON'],
-              [32.7, 20112, '星越']
+              [89.3, 58212, 'GKUI19'],
+              [57.1, 78254, 'GKUI20'],
+              [74.4, 41032, 'GKUI1.5'],
+              [50.1, 12755, '非GKUI']
             ]
           },
           grid: {
             // 调整图表距离父元素的距离
             left: '10%',
-            top: '10%',
+            top: '15%',
             bottom: '30%',
             right: '20%',
             width: '80%', // 图表的大小
-            height: '50%',
+            height: '40%',
             containLabel: true
           },
           xAxis: {
@@ -64,15 +59,15 @@
             left: 'center',
             text: ['High Score', 'Low Score'],
             // Map the score column to color
-            dimension: 0,
-            inRange: {
-              color: ['#D7DA8B', '#E15457']
-            }
+            dimension: 0
+            // inRange: {
+            //   color: ['#86D4CE', '#86D4CE']
+            // }
           },
           series: [
             {
               type: 'bar',
-              barWidth: '6px', // 柱状图的宽度
+              barWidth: '10px', // 柱状图的宽度
               encode: {
                 y: 'product'
               }
@@ -85,7 +80,7 @@
 </script>
 
 <style scoped>
-  .histograms{
+  .transverse{
     width: 100%;
     height: 240px;
     background-color: #fff;

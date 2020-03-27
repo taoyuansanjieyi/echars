@@ -33,8 +33,8 @@
             {
               name: '访问来源',
               type: 'pie',
-              radius: '55%',
-              center: ['50%', '60%'],
+              radius: '45%', // 半径
+              center: ['50%', '45%'], // 距离父元素的距离
               data: [
                 {
                   value: 335, name: '直接访问'
@@ -69,8 +69,9 @@
 
 <style scoped>
   .pies{
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: 240px;
     background-color: #fff;
+    margin: 0 0 15px 0;
   }
 </style>

@@ -44,8 +44,8 @@
             {
               name: '面积模式',
               type: 'pie',
-              radius: [70, 90],
-              center: ['45%', '50%'],
+              radius: [50, 70],
+              center: ['50%', '40%'],
               roseType: 'area',
               emphasis: {
                 label: {
@@ -88,8 +88,9 @@
 
 <style scoped>
   .pictures{
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: 240px;
     background-color: #fff;
+    margin: 0 0 15px 0;
   }
 </style>

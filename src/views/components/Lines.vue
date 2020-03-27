@@ -25,6 +25,14 @@
               fontWeight: 'normal'
             }
           },
+          grid: {
+            left: '8%',
+            top: '25%',
+            right: '20%',
+            width: '80%', // 图表的大小
+            height: '50%',
+            containLabel: true
+          },
           left: 'left',
           xAxis: {
             type: 'category',
@@ -59,8 +67,8 @@
 
 <style scoped>
   .lines{
-    width: 350px;
-    height: 300px;
+    width: 49.5%;
+    height: 240px;
     background-color: #fff;
   }
 </style>

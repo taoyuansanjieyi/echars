@@ -18,7 +18,7 @@
       },
       height: {
         type: String,
-        default: '300px'
+        default: '400px'
       },
       options: {
         type: Object,

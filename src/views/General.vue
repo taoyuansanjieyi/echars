@@ -27,21 +27,35 @@
           </div>
         </div>
       </div>
-      <Practices></Practices>
-      <PieCharts></PieCharts>
-      <Histograms></Histograms>
-      <Columnars></Columnars>
-      <Lines></Lines>
+      <div class="Gcontent">
+        <div class="Gleft">
+          <Practices></Practices>
+          <Histograms></Histograms>
+        </div>
+        <div class="Gcente">
+          <Map></Map>
+        </div>
+        <div class="Gright">
+          <PieCharts></PieCharts>
+          <Transverse></Transverse>
+        </div>
+      </div>
+      <div class="Gnext">
+        <Columnars></Columnars>
+        <Lines></Lines>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Practices from './components/practices'
-  import PieCharts from './components/PieCharts'
-  import Histograms from './components/Histograms'
-  import Columnars from './components/Columnars'
-  import Lines from './components/Lines'
+  import Practices from './components/practices' // 环状饼图
+  import PieCharts from './components/PieCharts' // 饼图
+  import Histograms from './components/Histograms' // 横向柱状图
+  import Columnars from './components/Columnars' // 底部左侧柱状图
+  import Lines from './components/Lines' // 底部右侧折线图
+  import Transverse from './components/Transverse' // 横向柱状图二
+  import Map from './components/Map'
 
   export default {
     name: 'General',
@@ -50,7 +64,9 @@
       PieCharts,
       Histograms,
       Columnars,
-      Lines
+      Lines,
+      Transverse,
+      Map
     },
     data () {
       return {
@@ -131,5 +147,27 @@
     font-weight: bold;
     color:rgb(27, 173, 231);
     font-size: 30px;
+  }
+  .Gcontent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Gleft{
+    width: 24%;
+  }
+  .Gright{
+    width: 24%;
+  }
+  .Gnext{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Gcontent>.Gcente{
+    width: 49.5%;
+    height: 495px;
+    background-color: #fff;
   }
 </style>
