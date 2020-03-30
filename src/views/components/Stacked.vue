@@ -1,11 +1,11 @@
-<!-- 纵向柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dataset-simple1 -->
+<!-- 折叠柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=bar-stack -->
 <template>
   <div :id="id" :style="style"></div>
 </template>
 
 <script>
   export default {
-    name: 'Columnar',
+    name: 'Stacked',
     props: {
       // 父组件需要传递的参数：id，width，height，options
       id: {
@@ -30,7 +30,7 @@
     data () {
       return {
         // 实例
-        columnar: ''
+        stacked: ''
       }
     },
     computed: {
@@ -46,11 +46,11 @@
       // 监控echarts属性变化
       options: {
         handler (newVal, oldVal) {
-          if (this.columnar) {
+          if (this.stacked) {
             if (newVal) {
-              this.columnar.setOption(newVal)
+              this.stacked.setOption(newVal)
             } else {
-              this.columnar.setOption(oldVal)
+              this.stacked.setOption(oldVal)
             }
           } else {
             this.init()
@@ -65,15 +65,15 @@
     },
     destroyed () {
       // 销毁
-      this.columnar.dispose()
+      this.stacked.dispose()
     },
     methods: {
       // 初始化
       init () {
-        this.columnar = this.$echarts.init(document.getElementById(this.id))
-        this.columnar.setOption(this.options)
+        this.stacked = this.$echarts.init(document.getElementById(this.id))
+        this.stacked.setOption(this.options)
         // 重绘
-        window.addEventListener('resize', this.columnar.resize)
+        window.addEventListener('resize', this.stacked.resize)
       }
     }
   }

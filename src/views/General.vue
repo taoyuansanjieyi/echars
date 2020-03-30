@@ -9,7 +9,7 @@
       <span>流量</span>
     </div>
     <div class="Gcenter">
-      数据更新时间：2020.01.01  00:00:00
+      数据更新时间：<b>2020.01.01  00:00:00</b>
     </div>
     <div class="Gbottom">
       <div class="Gls">
@@ -99,33 +99,31 @@
 
 <style scoped>
   .General{
-    width: 100%;
-    height: 100%;
-    text-align: left;
     padding: 10px;
     box-sizing: border-box;
     background-color: #eaeff3;
   }
   .Gtop{
-    width: 100%;
+    text-align: left;
     height: 35px;
-    line-height: 25px;
+    line-height: 32px;
   }
   .Gtop>span{
     display: inline-block;
-    width: 80px;
-    height: 25px;
+    width: 90px;
+    height: 32px;
     text-align: center;
     border:1px solid #ccc;
     border-radius:5px;
+    background-color: #fff;
   }
   .Gcenter{
+    text-align: left;
     line-height: 50px;
     background-color: #fff;
     padding: 0 15px;
   }
   .Gls{
-    width: 100%;
     height: 120px;
     display: flex;
     justify-content: space-between;
@@ -149,7 +147,6 @@
     font-size: 30px;
   }
   .Gcontent{
-    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -160,7 +157,6 @@
     width: 24%;
   }
   .Gnext{
-    width: 100%;
     height: 240px;
     display: flex;
     justify-content: space-between;

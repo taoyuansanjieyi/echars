@@ -2,7 +2,7 @@
   <div class="lines">
     <Lin
       :id="line"
-      :options="options"></Lin>
+      :options="options" :height="height"></Lin>
   </div>
 </template>
 
@@ -18,6 +18,7 @@
     data () {
       return {
         line: 'lins',
+        height: '240px',
         options: {
           title: {
             text: '近1年用户活跃度趋势',

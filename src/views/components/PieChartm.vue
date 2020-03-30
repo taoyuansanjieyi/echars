@@ -1,8 +1,17 @@
 <template>
   <div class="pies">
+    <div
+      class="Uctit">
+      用户数TOP5省份
+    </div>
+    <div
+        class="icon">
+        图标
+    </div>
     <PieChart
-      :id="pieCharts"
-      :options="options"></PieChart>
+      :id="PieChartm"
+      :options="options"
+      :height="height"></PieChart>
   </div>
 </template>
 
@@ -10,14 +19,15 @@
   import PieChart from './PieChart'
 
   export default {
-    name: 'PieCharts',
+    name: 'PieChartm',
     components: {
       PieChart
     },
     props: {},
     data () {
       return {
-        pieCharts: 'pie',
+        PieChartm: 'piec',
+        height: '240px',
         options: {
           title: {
             textStyle: {
@@ -33,7 +43,7 @@
               name: '访问来源',
               type: 'pie',
               radius: '45%', // 半径
-              center: ['50%', '45%'], // 距离父元素的距离
+              center: ['50%', '55%'], // 距离父元素的距离
               data: [
                 {
                   value: 335, name: '直接访问'
@@ -72,5 +82,16 @@
     height: 240px;
     background-color: #fff;
     margin: 0 0 15px 0;
+    position: relative;
+  }
+  .icon{
+    position: absolute;
+    right: 15px;
+    top: 5px;
+  }
+  .Uctit{
+    position: absolute;
+    left: 5px;
+    top: 5px;
   }
 </style>

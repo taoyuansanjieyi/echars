@@ -1,7 +1,15 @@
 <template>
-  <div class="columnars">
+  <div class="columnarl">
+    <div
+      class="Uctit">
+        2019年12月到2020年2月各车系用户数增长趋势
+    </div>
+    <div
+      class="icon">
+      图标
+    </div>
     <Columnar
-      :id="columnars"
+      :id="columnarl"
       :options="options"></Columnar>
   </div>
 </template>
@@ -10,32 +18,18 @@
   import Columnar from './Columnar'
 
   export default {
-    name: 'Columnars',
+    name: 'Columnarl',
     components: {
       Columnar
     },
     props: {},
     data () {
       return {
-        columnars: 'col',
+        columnarl: 'col',
         options: {
-          title: {
-            text: '累计卡数',
-            textStyle: {
-              fontWeight: 'normal'
-            }
-          },
-          grid: {
-            // 调整图表距离父元素的距离
-            left: '8%',
-            top: '25%',
-            right: '20%',
-            width: '80%', // 图表的大小
-            height: '50%',
-            containLabel: true
-          },
+          tooltip: {},
           dataset: {
-            // dimensions: ['2015', '2016', '2017'],
+            dimensions: ['product', '2015', '2016', '2017'],
             source: [
               {
                 product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7
@@ -48,14 +42,13 @@
               },
               {
                 product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1
-              }]
+              }
+            ]
           },
           xAxis: {
             type: 'category'
           },
           yAxis: {},
-          // Declare several bar series, each will be mapped
-          // to a column of dataset.source by default.
           series: [
             {
               type: 'bar'
@@ -74,12 +67,20 @@
 </script>
 
 <style scoped lang="scss">
-  .columnars{
-    width: 49.5%;
+  .columnarl{
+    width: 100%;
     height: 240px;
     background-color: #fff;
-    #col{
-      height: 240px;
-    }
+    position: relative;
+  }
+  .icon{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  .Uctit{
+    position: absolute;
+    left: 5px;
+    top: 5px;
   }
 </style>
