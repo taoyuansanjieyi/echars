@@ -2,7 +2,8 @@
   <div class="columnars">
     <Columnar
       :id="columnars"
-      :options="options"></Columnar>
+      :options="options"
+      :height='height'></Columnar>
   </div>
 </template>
 
@@ -18,6 +19,7 @@
     data () {
       return {
         columnars: 'col',
+        height: '240px',
         options: {
           title: {
             text: '累计卡数',
@@ -28,43 +30,64 @@
           grid: {
             // 调整图表距离父元素的距离
             left: '8%',
-            top: '25%',
+            top: '30%',
             right: '20%',
             width: '80%', // 图表的大小
             height: '50%',
             containLabel: true
           },
-          dataset: {
-            // dimensions: ['2015', '2016', '2017'],
-            source: [
-              {
-                product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7
-              },
-              {
-                product: 'Milk Tea', 2015: 83.1, 2016: 73.4, 2017: 55.1
-              },
-              {
-                product: 'Cheese Cocoa', 2015: 86.4, 2016: 65.2, 2017: 82.5
-              },
-              {
-                product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1
-              }]
+          legend: {
+            data: ['用户数', '环比'],
+            left: 'right'
           },
-          xAxis: {
-            type: 'category'
-          },
-          yAxis: {},
-          // Declare several bar series, each will be mapped
-          // to a column of dataset.source by default.
+          xAxis: [
+            {
+              type: 'category',
+              boundaryGap: true,
+              data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月']
+            },
+            {
+              type: 'category',
+              boundaryGap: true
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value',
+              scale: true,
+              max: 80000000,
+              min: 0,
+              boundaryGap: [0.2, 0.2]
+            },
+            {
+              type: 'value',
+              scale: true,
+              max: 80,
+              min: 0,
+              axisLabel: {
+                show: true,
+                interval: 'auto',
+                formatter: '{value} %'
+              }
+            }
+          ],
           series: [
             {
-              type: 'bar'
+              name: '用户数',
+              type: 'bar',
+              xAxisIndex: 1,
+              yAxisIndex: 1,
+              color: '#FFCD59',
+              barWidth: '15px',
+              data: ['70', '50', '20', '10', '8', '15', '25', '35', '35', '15']
             },
             {
-              type: 'bar'
-            },
-            {
-              type: 'bar'
+              name: '环比',
+              type: 'line',
+              xAxisIndex: 1,
+              yAxisIndex: 1,
+              color: 'skyblue',
+              data: ['10', '30', '20', '8', '7', '6', '5', '8', '9', '10']
             }
           ]
         }
