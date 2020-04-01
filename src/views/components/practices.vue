@@ -2,7 +2,8 @@
   <div class="pictures">
     <Practice
       :id="pictures"
-      :options="options"></Practice>
+      :options="options"
+      :height="height"></Practice>
   </div>
 </template>
 
@@ -18,6 +19,7 @@
     data () {
       return {
         pictures: 'picture',
+        height: '240px',
         options: {
           title: {
             text: '累计用户数',
@@ -25,57 +27,58 @@
               fontWeight: 'normal'
             }
           },
-          tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
-          },
-          toolbox: {
-            show: true,
-            feature: {
-              mark: {
-                show: true
-              },
-              restore: {
-                show: true
-              }
-            }
-          },
+          color: ['#FFD05A', '#04C4D7', '#D05C8B', '#E36CE8', '#72E3E8'],
           series: [
             {
               name: '面积模式',
               type: 'pie',
-              radius: [50, 70],
-              center: ['50%', '40%'],
-              roseType: 'area',
-              emphasis: {
-                label: {
-                  show: true
-                }
+              radius: [60, 80],
+              center: ['50%', '55%'],
+              avoidLabelOverlap: false,
+              hoverAnimation: false, // 鼠标滑过是否显示效果
+              roseType: 'radius', // 是否按照百分比显示
+              labelLine: { // 引导线
+                show: true,
+                length: 10,
+                length2: 8,
+                smooth: 0.1
               },
               data: [
                 {
-                  value: 10, name: 'rose'
+                  value: 130, name: '帝豪GS'
                 },
                 {
-                  value: 5, name: 'rose2'
+                  value: 20, name: '帝豪GL'
                 },
                 {
-                  value: 15, name: 'rose3'
+                  value: 160, name: '18款博越'
                 },
                 {
-                  value: 25, name: 'rose4'
+                  value: 25, name: 'ICON'
                 },
                 {
-                  value: 20, name: 'rose5'
+                  value: 20, name: '博越PRO'
                 },
                 {
-                  value: 35, name: 'rose6'
+                  value: 35, name: '缤瑞'
                 },
                 {
-                  value: 30, name: 'rose7'
+                  value: 30, name: '星越'
                 },
                 {
-                  value: 40, name: 'rose8'
+                  value: 40, name: '缤越'
+                },
+                {
+                  value: 35, name: '领克02'
+                },
+                {
+                  value: 130, name: '全新帝豪'
+                },
+                {
+                  value: 40, name: '领克03'
+                },
+                {
+                  value: 40, name: '领克01'
                 }
               ]
             }

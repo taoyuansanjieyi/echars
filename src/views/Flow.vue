@@ -227,8 +227,8 @@
   .Fconbottom{
     font-size: 12px;
     text-align-last: left;
-    margin-left: 45px;
-    line-height: 18px;
+    margin-left: 75px;
+    line-height: 20px;
   }
   .active{
     font-size: 13px;

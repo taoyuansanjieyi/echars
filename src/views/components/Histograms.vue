@@ -25,6 +25,7 @@
               fontWeight: 'normal'
             }
           },
+          color: ['#8CDFD8'],
           dataset: {
             source: [
               ['score', 'amount', 'product'],

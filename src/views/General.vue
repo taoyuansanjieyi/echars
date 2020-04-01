@@ -14,7 +14,7 @@
     <div class="Gbottom">
       <div class="Gls">
         <div
-          v-for="(item,index) in list"
+          v-for="(item,index) in lists"
           :key="index">
           <div class="Gtit">
             {{ item.title }}
@@ -23,7 +23,7 @@
             {{ item.num }}
           </div>
           <div class="num1">
-            {{ item.num1 }}
+            <span>{{ item.content.text ? `${item.content.text}:` : '' }}</span><span class="green">{{ item.content.num1 }}</span>
           </div>
         </div>
       </div>
@@ -70,26 +70,29 @@
     },
     data () {
       return {
-        list: [
+        lists: [
           {
             title: '车机系统总用户数',
             num: '100000',
-            num1: '日活：75920'
+            content: {
+              text: '日活',
+              num1: '75920'
+            }
           },
           {
             title: '总流量消耗',
             num: '8000',
-            num1: ''
+            content: {}
           },
           {
             title: '总粉丝数',
             num: '80000',
-            num1: ''
+            content: {}
           },
           {
             title: '2020年日人均在线时长',
             num: '1小时54分钟',
-            num1: ''
+            content: {}
           }
         ]
       }
@@ -165,5 +168,15 @@
     width: 49.5%;
     height: 495px;
     background-color: #fff;
+  }
+  .num1{
+    font-size: 12px;
+    text-align-last: left;
+    margin-left: 85px;
+    line-height: 30px;
+  }
+  .green{
+    color:rgb(23, 194, 23);
+    font-weight: bold;
   }
 </style>
