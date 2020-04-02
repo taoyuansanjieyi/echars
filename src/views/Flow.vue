@@ -1,12 +1,12 @@
 <template>
   <div class="flow">
-    <div class="Fcenter">
+    <div class="flow-center">
       <div>数据更新时间：<b>2020.01.01  00:00:00</b></div>
-      <div class="Fmounth">
+      <div class="flow-mounth">
         <Month></Month>
       </div>
     </div>
-    <div class="Fcontent">
+    <div class="flow-content">
       <div
         v-for="(item,index) in list"
         :key="index">
@@ -15,57 +15,57 @@
           图标
         </div>
         <div
-          class="Ftit">
+          class="flow-tit">
           {{ item.title }}
         </div>
         <div
-          class="num">
+          class="flow-num">
           {{ item.num }}
         </div>
-        <div :class="index == 2 ? 'active' : 'Fconbottom'">
+        <div :class="index == 2 ? 'active' : 'flow-conbottom'">
           <div><span>{{ item.content.left }}:</span><span class="green">{{ item.content.numl }}</span></div>
           <div><span>{{ item.content.center ? `${item.content.center}:` : '' }}</span><span class="green">{{ item.content.numc }}</span></div>
           <div><span>{{ item.content.right ? `${item.content.right}:` : '' }}</span><span class="green">{{ item.content.numr }}</span></div>
         </div>
-        <div :class="index == 2 ? 'active' : 'Fconbottom'">
+        <div :class="index == 2 ? 'active' : 'flow-conbottom'">
           <div><span>{{ item.content.left1 }}</span><span class="green">{{ item.content.num1l }}</span></div>
           <div><span>{{ item.content.center1 ? `${item.content.center1}:` : '' }}</span><span class="green">{{ item.content.numc1 }}</span></div>
           <div><span>{{ item.content.right1 ? `${item.content.right1}:` : '' }}</span><span class="green">{{ item.content.numr1 }}</span></div>
         </div>
       </div>
     </div>
-    <div class="Fbottom">
-      <div class="Fbotop">
-        <div class="FbotopL">
+    <div class="flow-bottom">
+      <div class="flow-botop">
+        <div class="flow-botopL">
           <Doublecolumn></Doublecolumn>
         </div>
-        <div class="FbotopR">
+        <div class="flow-botopR">
           <Flowcolumn></Flowcolumn>
         </div>
       </div>
-      <div class="Fbocenter">
-        <div class="FbocenL">
+      <div class="flow-bocenter">
+        <div class="flow-bocenL">
           <Pcharts></Pcharts>
         </div>
-        <div class="Fbocen">
+        <div class="flow-bocen">
           <Flowcharts></Flowcharts>
         </div>
-        <div class="FbocenT">
+        <div class="flow-bocenT">
           <Flowpie></Flowpie>
         </div>
-        <div class="FbocenR">
+        <div class="flow-bocenR">
           <Histogramline></Histogramline>
         </div>
       </div>
-      <div class="Fbbottom">
-        <div class="Fbbleft">
+      <div class="flow-bbottom">
+        <div class="flow-bbleft">
           <Flowlineleft></Flowlineleft>
         </div>
-        <div class="Fbbright">
+        <div class="flow-bbright">
           <Flowcolumns></Flowcolumns>
         </div>
       </div>
-      <div class="Fpoint">
+      <div class="flow-point">
         zuihou
       </div>
     </div>
@@ -158,12 +158,12 @@
     text-align: left;
     box-sizing: border-box;
   }
-  .Ftop{
+  .flow-top{
     text-align: left;
     height: 35px;
     line-height: 32px;
   }
-  .Ftop>span{
+  .flow-top>span{
     display: inline-block;
     width: 90px;
     height: 32px;
@@ -172,17 +172,17 @@
     border-radius:5px;
     background-color: #fff;
   }
-  .Fcenter{
+  .flow-center{
     text-align: left;
     line-height: 60px;
     background-color: #fff;
     padding: 0 15px;
     display: flex;
-    .Fmounth{
+    .flow-mounth{
       flex:1;
     }
   }
-  .Fcontent{
+  .flow-content{
     height: 120px;
     display: flex;
     justify-content: space-between;
@@ -195,17 +195,17 @@
       background-color: #fff;
       position: relative;
     }
-    .Ftit{
+    .flow-tit{
       font-weight: bold;
       font-size: 18px;
       line-height: 40px;
     }
-    .num{
+    .flow-num{
       font-weight: bold;
       color:rgb(27, 173, 231);
       font-size: 30px;
     }
-    .num1{
+    .flow-num1{
       font-size: 12px;
     }
   }
@@ -214,7 +214,7 @@
     right: 10px;
     top: 5px;
   }
-  .Fconbottom{
+  .flow-conbottom{
     font-size: 12px;
     text-align-last: left;
     margin-left: 75px;
@@ -235,21 +235,21 @@
     color:rgb(23, 194, 23);
     font-weight: bold;
   }
-  .Fbotop,.Fbocenter{
+  .flow-botop,.flow-bocenter{
     display: flex;
     justify-content: space-between;
   }
-  .FbotopL,.FbotopR,.Fbbleft,.Fbbright{
+  .flow-botopL,.flow-botopR,.flow-bbleft,.flow-bbright{
     width: 49.3%;
   }
-  .FbocenL,.Fbocen,.FbocenT,.FbocenR{
+  .flow-bocenL,.flow-bocen,.flow-bocenT,.flow-bocenR{
     width: 24%;
   }
-  .Fbbottom{
+  .flow-bbottom{
     display: flex;
     justify-content: space-between;
   }
-  .Fpoint{
+  .flow-point{
     height: 240px;
     // background-color: pink;
     margin-top:15px;

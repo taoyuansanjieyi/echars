@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import Practice from './practice'
+  import Practice from './Practice'
 
   export default {
     name: 'Practicel',

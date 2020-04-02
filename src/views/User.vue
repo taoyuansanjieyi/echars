@@ -31,7 +31,7 @@
       </div>
       <div class="Ucen">
         <div class="Ucenl">
-          <practicel></practicel>
+          <Practicel></Practicel>
         </div>
         <div class="UcenC">
           <PieChartm></PieChartm>
@@ -57,7 +57,7 @@
 
 <script>
   import Month from './components/Month'
-  import practicel from './components/practicel' // 环状饼图
+  import Practicel from './components/Practicel' // 环状饼图
   import PieChartm from './components/PieChartm' // 饼图
   import Stackeds from './components/Stackeds' // 折叠柱状图
   import Columnarl from './components/Columnarl' // 中间左侧柱状图
@@ -68,7 +68,7 @@
     name: 'User',
     components: {
       Month,
-      practicel,
+      Practicel,
       PieChartm,
       Stackeds,
       Columnarl,

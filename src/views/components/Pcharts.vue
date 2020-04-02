@@ -29,32 +29,84 @@
         Pcharts: 'pies',
         height: '240px',
         options: {
+          legend: { // 图形固定说明文字
+            show: true,
+            left: 'right',
+            orient: 'vertical', // 调整文字的距离
+            padding: [50, 30, 0, 0]
+          },
           series: [
             {
-              name: '访问来源',
               type: 'pie',
-              radius: '50%', // 半径
-              center: ['50%', '55%'], // 距离父元素的距离
-              data: [
-                {
-                  value: 335
-                },
-                {
-                  value: 310
+              radius: '70%', // 半径
+              center: ['40%', '60%'], // 距离父元素的距离
+              color: ['#48CAFF', '#838AFF'],
+              label: {
+                normal: {
+                  position: 'inner',
+                  textStyle: {
+                    fontWeight: 'normal',
+                    fontSize: 12 // 文字的字体大小
+                  },
+                  formatter: '{c}', // 图形上面显示数字
+                  color: 'black'
                 }
-              ],
-              label: { // 引导线
+              },
+              labelLine: {
                 normal: {
                   show: false
                 }
               },
-              emphasis: {
-                itemStyle: {
-                  shadowBlur: 10,
-                  shadowOffsetX: 0,
-                  shadowColor: 'rgba(0,0,0.5)'
+              data: [
+                {
+                  value: 200,
+                  name: 'G品牌',
+                  itemStyle: {
+                    color: {
+                      type: 'linear',
+                      x: 0,
+                      y: 0,
+                      x2: 0,
+                      y2: 1,
+                      colorStops: [
+                        {
+                          offset: 0, color: '#8289FF' // 0% 处的颜色
+                        },
+                        {
+                          offset: 1, color: '#8382FF' // 100% 处的颜色
+                        }
+                      ],
+                      global: false // 缺省为 false
+                    }
+                  }
+                },
+                {
+                  value: 55,
+                  name: 'L品牌',
+                  itemStyle: {
+                    normal: {
+                      borderWidth: 1,
+                      borderColor: '#ffffff'
+                    },
+                    color: {
+                      type: 'linear',
+                      x: 0,
+                      y: 0,
+                      x2: 0,
+                      y2: 1,
+                      colorStops: [
+                        {
+                          offset: 0, color: '#8289FF' // 0% 处的颜色
+                        },
+                        {
+                          offset: 1, color: '#8382FF' // 100% 处的颜色
+                        }
+                      ],
+                      global: false // 缺省为 false
+                    }
+                  }
                 }
-              }
+              ]
             }
           ]
         }

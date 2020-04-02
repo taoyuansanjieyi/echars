@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import Practices from './components/practices' // 环状饼图
+  import Practices from './components/Practices' // 环状饼图
   import PieCharts from './components/PieCharts' // 饼图
   import Histograms from './components/Histograms' // 横向柱状图
   import Columnars from './components/Columnars' // 底部左侧柱状图

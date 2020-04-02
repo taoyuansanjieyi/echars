@@ -54,11 +54,40 @@
           xAxis: {
             name: '',
             axisLabel: { // 坐标轴字体大小
-              fontSize: '20px'
+              fontSize: '20px',
+              color: 'black',
+              interval: 'auto',
+              formatter: '{value} %'
+            },
+            axisTick: { // 坐标轴刻度
+              show: false
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#ccc'
+              }
+            },
+            splitLine: { // 分割线
+              show: true,
+              lineStyle: {
+                color: '#eee'
+              }
             }
           },
           yAxis: {
-            type: 'category'
+            type: 'category',
+            axisLine: { // y轴坐标轴
+              lineStyle: { // y轴刻度线颜色
+                color: '#ccc'
+              }
+            },
+            axisTick: { // 坐标轴刻度
+              show: false
+            },
+            axisLabel: { // 刻度标签颜色
+              color: 'black',
+              fontSize: 12
+            }
           },
           visualMap: {
             orient: 'horizontal',

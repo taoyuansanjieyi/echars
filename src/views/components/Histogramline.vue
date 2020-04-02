@@ -27,7 +27,7 @@
     data () {
       return {
         histogramline: 'hislin',
-        height: '280px',
+        height: '350px',
         options: {
           dataset: {
             source: [
@@ -44,22 +44,30 @@
           grid: {
             // 调整图表距离父元素的距离
             left: '10%',
-            top: '20%',
+            top: '15%',
             bottom: '30%',
             right: '20%',
             width: '80%', // 图表的大小
             height: '50%',
             containLabel: true
           },
-          xAxis: {
-            name: '',
-            axisLabel: { // 坐标轴字体大小
-              fontSize: '20px'
+          xAxis: [
+            {
+              name: '流量消耗',
+              axisLabel: { // 坐标轴字体大小
+                fontSize: '20px'
+              },
+              min: 0,
+              max: 200
+            },
+            {
+              name: '用户数',
+              type: 'value',
+              min: 0,
+              max: 60
             }
-          },
-          yAxis: {
-            type: 'category'
-          },
+          ],
+          yAxis: [],
           visualMap: {
             orient: 'horizontal',
             left: 'center',
