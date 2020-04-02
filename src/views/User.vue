@@ -57,7 +57,7 @@
 
 <script>
   import Month from './components/Month'
-  import Practicel from './components/Practicel' // 环状饼图
+  import Practicel from './components/Ipracticel' // 环状饼图
   import PieChartm from './components/PieChartm' // 饼图
   import Stackeds from './components/Stackeds' // 折叠柱状图
   import Columnarl from './components/Columnarl' // 中间左侧柱状图

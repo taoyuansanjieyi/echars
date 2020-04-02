@@ -98,7 +98,6 @@
 
 <style scoped lang="scss">
   .columnars{
-    width: 49.5%;
     height: 240px;
     background-color: #fff;
     #col{

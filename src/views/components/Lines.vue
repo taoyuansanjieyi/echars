@@ -69,7 +69,6 @@
 
 <style scoped>
   .lines{
-    width: 49.5%;
     height: 240px;
     background-color: #fff;
   }
