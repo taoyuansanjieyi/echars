@@ -29,18 +29,6 @@
         histogramline: 'hislin',
         height: '350px',
         options: {
-          dataset: {
-            source: [
-              ['score', 'amount', 'product'],
-              [89.3, 58212, '星期一'],
-              [57.1, 78254, '星期二'],
-              [74.4, 41032, '星期三'],
-              [50.1, 12755, '星期四'],
-              [89.7, 20145, '星期五'],
-              [68.1, 79146, '星期六'],
-              [68.1, 79146, '星期日']
-            ]
-          },
           grid: {
             // 调整图表距离父元素的距离
             left: '10%',
@@ -53,7 +41,7 @@
           },
           xAxis: [
             {
-              name: '流量消耗',
+              name: '',
               axisLabel: { // 坐标轴字体大小
                 fontSize: '20px'
               },
@@ -61,23 +49,41 @@
               max: 200
             },
             {
-              name: '用户数',
+              name: '',
               type: 'value',
               min: 0,
               max: 60
             }
           ],
-          yAxis: [],
-          visualMap: {
-            orient: 'horizontal',
-            left: 'center',
-            text: ['High Score', 'Low Score'],
-            // Map the score column to color
-            dimension: 0,
-            inRange: {
-              color: ['#D7DA8B', '#E15457']
+          yAxis: [
+            {
+              type: 'category',
+              axisLine: {
+                onZero: false
+              },
+              boundaryGap: false,
+              data: ['周一', '周二', '周3', '周4', '周5', '周6', '周7']
+            },
+            {
+              type: 'category',
+              show: false,
+              axisLine: {
+                onZero: false
+              },
+              boundaryGap: false,
+              data: ['周一', '周二', '周3', '周4', '周5', '周6', '周7']
             }
-          },
+          ],
+          // visualMap: {
+          //   orient: 'horizontal',
+          //   left: 'center',
+          //   text: ['High Score', 'Low Score'],
+          //   // Map the score column to color
+          //   dimension: 0,
+          //   inRange: {
+          //     color: ['#D7DA8B', '#E15457']
+          //   }
+          // },
           series: [
             {
               type: 'bar',
