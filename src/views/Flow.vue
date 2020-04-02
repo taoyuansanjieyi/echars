@@ -1,13 +1,5 @@
 <template>
   <div class="flow">
-    <div class="Ftop">
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-    </div>
     <div class="Fcenter">
       <div>数据更新时间：<b>2020.01.01  00:00:00</b></div>
       <div class="Fmounth">
@@ -164,9 +156,7 @@
 <style scoped lang='scss'>
   .flow{
     text-align: left;
-    padding: 10px;
     box-sizing: border-box;
-    background-color: #eaeff3;
   }
   .Ftop{
     text-align: left;

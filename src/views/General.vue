@@ -1,13 +1,5 @@
 <template>
   <div class="General">
-    <div class="Gtop">
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-    </div>
     <div class="Gcenter">
       数据更新时间：<b>2020.01.01  00:00:00</b>
     </div>
@@ -102,9 +94,7 @@
 
 <style scoped>
   .General{
-    padding: 10px;
     box-sizing: border-box;
-    background-color: #eaeff3;
   }
   .Gtop{
     text-align: left;

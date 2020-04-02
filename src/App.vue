@@ -1,52 +1,58 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">
-        首页
-      </router-link> |
-      <router-link to="/general">
-        概览
-      </router-link> |
-      <router-link to="/user">
-        用户
-      </router-link> |
-      <router-link to="/flow">
-        流量
-      </router-link>
+    <div class="common-report">
+      <div class="common-report-header">
+        <el-tabs
+          v-model="activeName"
+          type="card"
+          @tab-click="handleClick">
+          <el-tab-pane
+            label="概览"
+            name="CommonReportGeneral">
+          </el-tab-pane>
+          <el-tab-pane
+            label="用户"
+            name="CommonReportUser">
+          </el-tab-pane>
+          <el-tab-pane
+            label="流量"
+            name="CommonReportFlow">
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+      <router-view></router-view>
     </div>
-    <router-view></router-view>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'CommonReport',
+    data () {
+      return {
+        activeName: 'CommonReportGeneral'
+      }
+    },
+    methods: {
+      handleClick (tab) {
+        this.$router.push({ name: tab.name })
+      }
+    }
+  }
+</script>
 
 <style lang="scss">
 html,body{
   height: 100%;
 }
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
 
-#container {
-  height:100%
-}
-
-#nav {
-  padding: 30px;
+.common-report {
+  padding: 10px;
   box-sizing: border-box;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  background-color: #f0f2f5;
+
+  &-header {
+    background-color:#fff;
   }
 }
 </style>

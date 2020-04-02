@@ -5,8 +5,8 @@
       用户数TOP5省份
     </div>
     <div
-        class="icon">
-        图标
+      class="icon">
+      图标
     </div>
     <PieChart
       :id="flowcharts"

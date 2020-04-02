@@ -2,7 +2,7 @@
   <div class="picturel">
     <div
       class="Uctit">
-        2020年1月新增用户数
+      2020年1月新增用户数
     </div>
     <div
       class="icon">

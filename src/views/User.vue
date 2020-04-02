@@ -1,13 +1,5 @@
 <template>
   <div class="User">
-    <div class="Utop">
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-      <span>概览</span>
-      <span>用户</span>
-      <span>流量</span>
-    </div>
     <div class="Ucenter">
       <div>数据更新时间：<b>2020.01.01  00:00:00</b></div>
       <div class="Umounth">
@@ -113,9 +105,7 @@
 <style scoped lang="scss">
   .User{
     text-align: left;
-    padding: 10px;
     box-sizing: border-box;
-    background-color: #eaeff3;
   }
   .Utop{
     text-align: left;

@@ -1,6 +1,8 @@
 <!-- 纵向柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dataset-simple1 -->
 <template>
-  <div :id="id" :style="style"></div>
+  <div
+    :id="id"
+    :style="style"></div>
 </template>
 
 <script>

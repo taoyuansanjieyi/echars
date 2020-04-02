@@ -2,7 +2,8 @@
   <div class="lines">
     <Lin
       :id="line"
-      :options="options" :height="height"></Lin>
+      :options="options"
+      :height="height"></Lin>
   </div>
 </template>
 

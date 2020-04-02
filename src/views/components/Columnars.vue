@@ -3,7 +3,7 @@
     <Columnar
       :id="columnars"
       :options="options"
-      :height='height'></Columnar>
+      :height="height"></Columnar>
   </div>
 </template>
 

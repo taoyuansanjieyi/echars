@@ -1,6 +1,8 @@
 <!-- 折线、柱状图 https://www.echartsjs.com/examples/zh/editor.html?c=dynamic-data -->
 <template>
-  <div :id="id" :style="style"></div>
+  <div
+    :id="id"
+    :style="style"></div>
 </template>
 
 <script>

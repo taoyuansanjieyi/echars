@@ -6,22 +6,23 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/general',
     name: 'Home',
     component: () => import('../views/Home.vue')
   },
   {
     path: '/general',
-    name: 'General',
+    name: 'CommonReportGeneral',
     component: () => import('../views/General.vue')
   },
   {
     path: '/user',
-    name: 'User',
+    name: 'CommonReportUser',
     component: () => import('../views/User.vue')
   },
   {
     path: '/flow',
-    name: 'Flow',
+    name: 'CommonReportFlow',
     component: () => import('../views/Flow.vue')
   }
 ]

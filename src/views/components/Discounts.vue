@@ -2,7 +2,7 @@
   <div class="discounts">
     <div
       class="Uctit">
-        近1年用户增长趋势
+      近1年用户增长趋势
     </div>
     <div
       class="icon">

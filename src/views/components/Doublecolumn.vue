@@ -2,7 +2,7 @@
   <div class="doublecolumn">
     <div
       class="double">
-        近1年用户增长趋势
+      近1年用户增长趋势
     </div>
     <div
       class="icon">
