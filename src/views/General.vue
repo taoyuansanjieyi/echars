@@ -48,7 +48,6 @@
 
 <script>
   import TitleBox from './components/TitleBox'
-
   import Practices from './components/Ipractices' // 环状饼图
   import PieCharts from './components/PieCharts' // 饼图
   import Histograms from './components/Histograms' // 横向柱状图

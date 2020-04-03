@@ -1,62 +1,65 @@
 <template>
-  <div class="User">
-    <div class="Ucenter">
-      <div>数据更新时间：<b>2020.01.01  00:00:00</b></div>
-      <div class="Umounth">
+  <div>
+    <div class="user-top">
+      <div class="title-line mg-b10">
+        数据更新时间：<span>{{ form.updateTime }}</span>
+      </div>
+      <div class="user-changetime">
         <Month></Month>
       </div>
     </div>
-    <div class="Ubottom">
-      <div class="Ubtop">
-        <div
-          v-for="(item,index) in list"
-          :key="index">
-          <div
-            class="icon">
-            图标
-          </div>
-          <div
-            class="Utit">
-            {{ item.tit }}
-          </div>
-          <div
-            class="num">
-            {{ item.num }}
-          </div>
-          <div
-            class="num1">
-            {{ item.add }}
-          </div>
-        </div>
-      </div>
-      <div class="Ucen">
-        <div class="Ucenl">
-          <Practicel></Practicel>
-        </div>
-        <div class="UcenC">
-          <PieChartm></PieChartm>
-        </div>
-        <div class="Ucenr">
-          <Stackeds></Stackeds>
-        </div>
-      </div>
-      <div class="Ubot">
-        <div class="Ubotl">
-          <Columnarl></Columnarl>
-        </div>
-        <div class="Ubotr">
-          <Discounts></Discounts>
-        </div>
-      </div>
-      <div class="last">
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col
+        v-for="(item, index) in list"
+        :key="index"
+        :span="6">
+        <user-title
+          :item="item"
+          :data="form"></user-title>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="6">
+        <Practicel></Practicel>
+      </el-col>
+      <el-col :span="6">
+        <PieChartm></PieChartm>
+      </el-col>
+      <el-col :span="12">
+        <Stackeds></Stackeds>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="12">
+        <Columnarl></Columnarl>
+      </el-col>
+      <el-col :span="12">
+        <Discounts></Discounts>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="24">
         <DiscountBs></DiscountBs>
-      </div>
-    </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
   import Month from './components/Month'
+  import UserTitle from './components/UserTitle'
   import Practicel from './components/Ipracticel' // 环状饼图
   import PieChartm from './components/PieChartm' // 饼图
   import Stackeds from './components/Stackeds' // 折叠柱状图
@@ -73,28 +76,45 @@
       Stackeds,
       Columnarl,
       Discounts,
-      DiscountBs
+      DiscountBs,
+      UserTitle
     },
     data () {
       return {
+        gutter: 10,
+        form: {
+          updateTime: '2020.01.01  00:00:00',
+          allUsers: '100000',
+          dayCount: '75920',
+          allFlow: '8000',
+          allFunNum: '1000',
+          peopleOnLineTime: '69%',
+          proportion: '16.7%'
+        },
         list: [
           {
-            tit: '月增车机系统用户数',
-            num: '10,000,000',
-            add: '日增：1600'
+            title: '月增车机系统用户数',
+            prop: 'allUsers',
+            content: [{
+              label: '日增',
+              prop: 'dayCount'
+            }]
           },
           {
-            tit: '月活',
-            num: '8,000',
-            add: '月活占比：16.7%'
+            title: '月活',
+            prop: 'allFlow',
+            content: [{
+              label: '月活占比',
+              prop: 'proportion'
+            }]
           },
           {
-            tit: '日活',
-            num: '1,000'
+            title: '日活',
+            prop: 'allFunNum'
           },
           {
-            tit: '用户活跃度峰值',
-            num: '8,000'
+            title: '用户活跃度峰值',
+            prop: 'peopleOnLineTime'
           }
         ]
       }
@@ -103,31 +123,24 @@
 </script>
 
 <style scoped lang="scss">
-  .User{
+  .title-line{
     text-align: left;
-    box-sizing: border-box;
-  }
-  .Utop{
-    text-align: left;
-    height: 35px;
-    line-height: 32px;
-  }
-  .Utop>span{
-    display: inline-block;
-    width: 90px;
-    height: 32px;
-    text-align: center;
-    border:1px solid #ccc;
-    border-radius:5px;
-    background-color: #fff;
-  }
-  .Ucenter{
-    text-align: left;
-    line-height: 60px;
+    line-height: 30px;
     background-color: #fff;
     padding: 0 15px;
+    span {
+      font-weight: bold;
+    }
+  }
+  .mg-b10 {
+    margin-bottom: 10px;
+  }
+  .user-top{
+    background-color: #fff;
+    padding: 0 15px;
+    margin:0 0 10px 0;
     display: flex;
-    .Umounth{
+    .user-changetime{
       flex:1;
     }
   }
@@ -135,57 +148,5 @@
     position: absolute;
     right: 10px;
     top: 5px;
-  }
-  .Ubtop{
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin-top:15px;
-    margin-bottom:15px;
-    >div{
-      width: 24%;
-      height: 100%;
-      background-color: #fff;
-      position: relative;
-    }
-    .Utit{
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 40px;
-    }
-    .num{
-      font-weight: bold;
-      color:rgb(27, 173, 231);
-      font-size: 30px;
-    }
-    .num1{
-      font-size: 12px;
-    }
-  }
-  .Ucen{
-    display: flex;
-    justify-content: space-between;
-    .Ucenl,.UcenC{
-      width: 24%;
-      height: 100%;
-    }
-    .Ucenr{
-      width: 49.5%;
-      height: 100%;
-    }
-  }
-  .Ubot{
-    height: 240px;
-    display: flex;
-    justify-content: space-between;
-    .Ubotl,.Ubotr{
-      width: 49.4%;
-      background-color: #ccc;
-    }
-  }
-  .last{
-    width: 100%;
-    margin-top: 15px;
   }
 </style>

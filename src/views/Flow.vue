@@ -1,70 +1,65 @@
 <template>
-  <div class="flow">
-    <div class="flow-center">
-      <div>数据更新时间：<b>2020.01.01  00:00:00</b></div>
-      <div class="flow-mounth">
+  <div>
+    <div class="flow-top">
+      <div class="title-line mg-b10">
+        数据更新时间：<span>{{ form.updateTime }}</span>
+      </div>
+      <div class="flow-changetime">
         <Month></Month>
       </div>
     </div>
-    <div class="flow-content">
-      <div
-        v-for="(item,index) in list"
-        :key="index">
-        <div
-          class="icon">
-          图标
-        </div>
-        <div
-          class="flow-tit">
-          {{ item.title }}
-        </div>
-        <div
-          class="flow-num">
-          {{ item.num }}
-        </div>
-        <div :class="index == 2 ? 'active' : 'flow-conbottom'">
-          <div><span>{{ item.content.left }}:</span><span class="green">{{ item.content.numl }}</span></div>
-          <div><span>{{ item.content.center ? `${item.content.center}:` : '' }}</span><span class="green">{{ item.content.numc }}</span></div>
-          <div><span>{{ item.content.right ? `${item.content.right}:` : '' }}</span><span class="green">{{ item.content.numr }}</span></div>
-        </div>
-        <div :class="index == 2 ? 'active' : 'flow-conbottom'">
-          <div><span>{{ item.content.left1 }}</span><span class="green">{{ item.content.num1l }}</span></div>
-          <div><span>{{ item.content.center1 ? `${item.content.center1}:` : '' }}</span><span class="green">{{ item.content.numc1 }}</span></div>
-          <div><span>{{ item.content.right1 ? `${item.content.right1}:` : '' }}</span><span class="green">{{ item.content.numr1 }}</span></div>
-        </div>
-      </div>
-    </div>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col
+        v-for="(item, index) in list"
+        :key="index"
+        :span="6">
+        <flow-title
+          :item="item"
+          :data="form"></flow-title>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter">
+      <el-col :span="12">
+        <Doublecolumn></Doublecolumn>
+      </el-col>
+      <el-col :span="12">
+        <Flowcolumn></Flowcolumn>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter">
+      <el-col :span="6">
+        <Pcharts></Pcharts>
+      </el-col>
+      <el-col :span="6">
+        <Flowcharts></Flowcharts>
+      </el-col>
+      <el-col :span="6">
+        <Flowpie></Flowpie>
+      </el-col>
+      <el-col :span="6">
+        <Histogramline></Histogramline>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="12">
+        <Flowlineleft></Flowlineleft>
+      </el-col>
+      <el-col :span="12">
+        <Flowcolumns></Flowcolumns>
+      </el-col>
+    </el-row>
+
     <div class="flow-bottom">
-      <div class="flow-botop">
-        <div class="flow-botopL">
-          <Doublecolumn></Doublecolumn>
-        </div>
-        <div class="flow-botopR">
-          <Flowcolumn></Flowcolumn>
-        </div>
-      </div>
-      <div class="flow-bocenter">
-        <div class="flow-bocenL">
-          <Pcharts></Pcharts>
-        </div>
-        <div class="flow-bocen">
-          <Flowcharts></Flowcharts>
-        </div>
-        <div class="flow-bocenT">
-          <Flowpie></Flowpie>
-        </div>
-        <div class="flow-bocenR">
-          <Histogramline></Histogramline>
-        </div>
-      </div>
-      <div class="flow-bbottom">
-        <div class="flow-bbleft">
-          <Flowlineleft></Flowlineleft>
-        </div>
-        <div class="flow-bbright">
-          <Flowcolumns></Flowcolumns>
-        </div>
-      </div>
       <div class="flow-point">
         zuihou
       </div>
@@ -74,6 +69,7 @@
 
 <script>
   import Month from './components/Month'
+  import FlowTitle from './components/FlowTitle'
   import Doublecolumn from './components/Doublecolumn' // 双柱形折线图
   import Flowcolumn from './components/Flowcolumn' // 折线、柱状图
   import Pcharts from './components/Pcharts' // 饼图没有引导线
@@ -87,6 +83,7 @@
     name: 'Flow',
     components: {
       Month,
+      FlowTitle,
       Doublecolumn,
       Flowcolumn,
       Pcharts,
@@ -98,54 +95,74 @@
     },
     data () {
       return {
+        gutter: 10,
+        form: {
+          updateTime: '2020.01.01  00:00:00',
+          allUsers: '10000000',
+          moblieCount: '75920',
+          allFlow: '8000',
+          allFunNum: '2000000',
+          peopleOnLineTime: '3000',
+          proportion: '16.7%',
+          mobileactive: '75,920',
+          consumption: '15920',
+          mobilecards: '15,920',
+          punum: '15,920',
+          unicom: '24,180',
+          unicomactive: '24,180',
+          unicocards: '4800',
+          consumptions: '4180',
+          punums: '120',
+          strnums: '5,290'
+        },
         list: [
           {
             title: '发卡数',
-            num: '10,000,000',
-            content: {
-              left: '移动发卡数',
-              numl: '75,920',
-              left1: '联通发卡数',
-              num1l: '24,180'
-            }
+            prop: 'allUsers',
+            content: [{
+              label: '移动发卡数',
+              prop: 'moblieCount',
+              labels: '联通发卡数',
+              props: 'unicom'
+            }]
           },
           {
             title: '月活跃卡数',
-            num: '8,000',
-            content: {
-              left: '移动活跃卡数',
-              numl: '75,920',
-              left1: '联通活跃卡数',
-              num1l: '24,180'
-            }
+            prop: 'allFlow',
+            content: [{
+              label: '移动活跃卡数',
+              prop: 'mobileactive',
+              labels: '联通活跃卡数',
+              props: 'unicomactive'
+            }]
           },
           {
             title: '2020年1月流量消耗(GB)',
-            num: '200,000',
-            content: {
-              left: '移动流量消耗',
-              numl: '15,920',
-              center: '公网',
-              numc: '15,920',
-              right: '前装',
-              numr: '5,290',
-              left1: '联通流量消耗',
-              num1l: '4,180',
-              center1: '私网',
-              numc1: '120',
-              right1: '后装',
-              numr1: '5,290'
-            }
+            prop: 'allFunNum',
+            content: [{
+              label: '移动流量消耗',
+              prop: 'consumption',
+              publick: '公网',
+              punum: 'punum',
+              strart: '前装',
+              strnum: '5,290',
+              labels: '联通流量消耗',
+              props: 'consumptions',
+              publicks: '私网',
+              punums: 'punums',
+              strarts: '后装',
+              strnums: 'strnums'
+            }]
           },
           {
             title: '2020年1月实名流量卡数',
-            num: '3,000',
-            content: {
-              left: '移动流量卡数',
-              numl: '15,920',
-              left1: '联通流量卡数',
-              num1l: '4,180'
-            }
+            prop: 'peopleOnLineTime',
+            content: [{
+              label: '移动流量卡数',
+              prop: 'mobilecards',
+              labels: '联通流量卡数',
+              props: 'unicocards'
+            }]
           }
         ]
       }
@@ -154,23 +171,35 @@
 </script>
 
 <style scoped lang='scss'>
+  .title-line{
+    text-align: left;
+    line-height: 30px;
+    background-color: #fff;
+    padding: 0 15px;
+    span {
+      font-weight: bold;
+    }
+  }
+  .mg-b10 {
+    margin-bottom: 10px;
+  }
+  .flow-top{
+    background-color: #fff;
+    padding: 0 15px;
+    margin:0 0 10px 0;
+    display: flex;
+    .flow-changetime{
+      flex:1;
+    }
+  }
+  .icon{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
   .flow{
     text-align: left;
     box-sizing: border-box;
-  }
-  .flow-top{
-    text-align: left;
-    height: 35px;
-    line-height: 32px;
-  }
-  .flow-top>span{
-    display: inline-block;
-    width: 90px;
-    height: 32px;
-    text-align: center;
-    border:1px solid #ccc;
-    border-radius:5px;
-    background-color: #fff;
   }
   .flow-center{
     text-align: left;
