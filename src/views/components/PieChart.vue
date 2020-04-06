@@ -75,6 +75,8 @@
       init () {
         this.pie = this.$echarts.init(document.getElementById(this.id))
         this.pie.setOption(this.options)
+        console.log(this.pie.getOption(), this.id)
+        console.log(this.options.series.length)
         // 重绘
         window.addEventListener('resize', this.pie.resize)
       }

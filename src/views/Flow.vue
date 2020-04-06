@@ -23,7 +23,8 @@
     </el-row>
 
     <el-row
-      :gutter="gutter">
+      :gutter="gutter"
+      class="mg-b10">
       <el-col :span="12">
         <Doublecolumn></Doublecolumn>
       </el-col>
@@ -33,7 +34,8 @@
     </el-row>
 
     <el-row
-      :gutter="gutter">
+      :gutter="gutter"
+      class="mg-b10">
       <el-col :span="6">
         <Pcharts></Pcharts>
       </el-col>
@@ -59,11 +61,21 @@
       </el-col>
     </el-row>
 
-    <div class="flow-bottom">
-      <div class="flow-point">
-        zuihou
-      </div>
-    </div>
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="24">
+        <time-axis></time-axis>
+      </el-col>
+    </el-row>
+
+    <el-row
+      :gutter="gutter"
+      class="mg-b10">
+      <el-col :span="24">
+        <ScatterPoint></ScatterPoint>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -78,6 +90,8 @@
   import Histogramline from './components/Histogramline' // 饼图最后一个
   import Flowlineleft from './components/Flowlineleft' // 柱状图
   import Flowcolumns from './components/Flowcolumns' // 折线、柱状图
+  import TimeAxis from './components/TimeAxis' // 时间轴
+  import ScatterPoint from './components/ScatterPoint' // 散点图
 
   export default {
     name: 'Flow',
@@ -91,7 +105,9 @@
       Flowpie,
       Histogramline,
       Flowlineleft,
-      Flowcolumns
+      Flowcolumns,
+      TimeAxis,
+      ScatterPoint
     },
     data () {
       return {

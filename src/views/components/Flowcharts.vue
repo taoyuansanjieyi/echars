@@ -104,7 +104,6 @@
     width: 100%;
     height: 240px;
     background-color: #fff;
-    margin: 15px 0 15px 0;
     position: relative;
   }
   .icon{
